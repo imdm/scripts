@@ -37,7 +37,8 @@ Install_ohmyzsh(){
     cd ~/.oh-my-zsh/custom/plugins/
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
     git clone https://github.com/zsh-users/zsh-autosuggestions
-    sed 'd11;10a/ZSH_THEME="ys";s/ plugins=()/plugins=(git last-working-dir vi-mode zsh-autosuggestions zsh-syntax-highlighting)'
+    sed -i 's/robbyrussell/ys/g' ~/.zshrc
+    sed -i 's/plugins=(git)/plugins=(git last-working-dir vi-mode zsh-autosuggestions zsh-syntax-highlighting)/g' ~/.zshrc
     source ~/.zshrc
     echo "安装成功~~"
 }
